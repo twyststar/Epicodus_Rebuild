@@ -1,0 +1,12 @@
+<% if @prev %>
+<%= link_to "Previous", course_week_lesson_path(@course, @week, @prev) %>
+<% end %>
+<% if @next %>
+<%= link_to "Next", course_week_lesson_path(@course, @week, @next) %>
+<% end %>
+
+<h1><%= @lesson.description %></h1>
+
+<div class="">
+  <%= render @lesson.title  %>
+</div>

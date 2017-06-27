@@ -1,0 +1,9 @@
+<%= render('layouts/errors', :object => @week) %>
+
+<%= form_for [@course, @week] do |f| %>
+  <%= f.label :timeframe %>
+  <%= f.text_field :timeframe %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <p><%= f.submit %></p>
+<% end %>
