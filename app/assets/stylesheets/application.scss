@@ -1,0 +1,28 @@
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+.lesson-box {
+  padding: 2%;
+  border-bottom: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  border-left: 1px solid lightgray;
+}
+
+.top-bar {
+  padding: 1%;
+  position: fixed;
+  border-bottom: 1px solid gray;
+}
+
+.lessons {
+  margin-top: 10%;
+  clear: both;
+  a {
+    color: #b72a2a;
+  }
+}
+
+.blue {
+  color: yellow;
+}

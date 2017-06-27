@@ -1,12 +1,19 @@
-<% if @prev %>
-<%= link_to "Previous", course_week_lesson_path(@course, @week, @prev) %>
-<% end %>
-<% if @next %>
-<%= link_to "Next", course_week_lesson_path(@course, @week, @next) %>
-<% end %>
 
-<h1><%= @lesson.description %></h1>
+<div class="navbar navbar-default navbar-fixed-top">
+  <% if @prev %>
+  <%= link_to "Previous", course_week_lesson_path(@course, @week, @prev) %>
+  <% end %>
+  <% if @next %>
+  <%= link_to "Next", course_week_lesson_path(@course, @week, @next) %>
+  <% end %>
+</div>
+<div class="lessons">
+  <h1><%= link_to @course.name, course_path(@course) %> / <%= link_to @week.description, course_week_path(@week) %> / <%= @lesson.description %></h1>
 
-<div class="">
-  <%= render @lesson.title  %>
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#">Text</a></li>
+  </ul>
+  <div class="lesson-box">
+    <%= render @lesson.title  %>
+  </div>
 </div>

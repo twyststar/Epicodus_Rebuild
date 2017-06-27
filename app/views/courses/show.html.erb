@@ -3,20 +3,20 @@
 <% if @course.weeks.any? %>
   <h4>Here are the weeks for this course:</h4>
 
-<ul>
-  <% @course.weeks.each do |week| %>
-    <li>
+  <ul>
+    <% @course.weeks.each do |week| %>
+      <li>
 
-      (<%= week.timeframe %>)<%= link_to week.description, course_week_path(@course, week) %> |
-      <%= link_to "Edit", edit_course_week_path(@course, week) %> |
-      <%= link_to "Delete", course_week_path(@course, week),
-                               :data => {:confirm => "Are you sure?",
-                                              :method => "delete"} %>
-    </li>
-  <% end %>
-</ul>
+        (<%= week.timeframe %>)<%= link_to week.description, course_week_path(@course, week) %> |
+        <%= link_to "Edit", edit_course_week_path(@course, week) %> |
+        <%= link_to "Delete", course_week_path(@course, week),
+                                 :data => {:confirm => "Are you sure?",
+                                                :method => "delete"} %>
+      </li>
+    <% end %>
+  </ul>
 <% else %>
-<p>There are no weeks yet!</p>
+  <p>There are no weeks yet!</p>
 <% end %>
 <%= link_to "New", new_course_week_path(@course) %>
 <p><%= link_to "Edit", edit_course_path(@course) %></p>

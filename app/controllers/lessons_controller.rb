@@ -39,7 +39,7 @@ class LessonsController < ApplicationController
     @week = Week.find(params[:week_id])
     @lesson = Lesson.find(params[:id])
     if @lesson.update(lesson_params)
-      redirect_to course_week_path(@week)
+      redirect_to course_week_path(@course,@week)
     else
       render :edit
     end
