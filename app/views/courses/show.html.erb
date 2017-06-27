@@ -1,13 +1,11 @@
 <h1><%= @course.name %></h1>
 
 <% if @course.weeks.any? %>
-  <h4>Here are the weeks for this course:</h4>
-
+  <br>
   <ul>
     <% @course.weeks.each do |week| %>
-      <li>
-
-        (<%= week.timeframe %>)<%= link_to week.description, course_week_path(@course, week) %> |
+      <li class="list-unstyled"><h4>
+        (<%= week.timeframe %> ) <%= link_to week.description, course_week_path(@course, week) %></h4> |
         <%= link_to "Edit", edit_course_week_path(@course, week) %> |
         <%= link_to "Delete", course_week_path(@course, week),
                                  :data => {:confirm => "Are you sure?",
